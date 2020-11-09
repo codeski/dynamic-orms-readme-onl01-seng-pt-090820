@@ -20,7 +20,6 @@ class Song
       column_names << row["name"]
     end
     column_names.compact
-    binding.pry
   end
 
   self.column_names.each do |col_name|
@@ -30,6 +29,7 @@ class Song
   def initialize(options={})
     options.each do |property, value|
       self.send("#{property}=", value)
+      binding.pry
     end
   end
 
